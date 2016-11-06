@@ -847,7 +847,7 @@ tr.preview td:nth-child(2) > a:after {
 }
 
 .notes:before {
-    content: "NOTES: ";
+    content: "NOTAS: ";
     font-weight: bold;
     color: gray;
 }
