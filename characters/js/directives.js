@@ -306,23 +306,23 @@ directives.addTags = function($stateParams, $rootScope) {
             var id = $stateParams.id, data = details[id];
             // flags
             var flags = window.flags[id] || { };
-            element.append($('<span class="tag flag">' + (flags.global ? 'Unidad Global' : 'unidad Japonesa') + '</div>'));
+            element.append($('<span class="tag flag">' + (flags.global ? 'Unidad Global' : 'Unidad Japonesa') + '</div>'));
             element.append($('<span class="tag flag">' +
-                        (CharUtils.isFarmable(id) ? 'Farmable' : 'Non-farmable') + '</div>'));
-            if (flags.rr) element.append($('<span class="tag flag">Rare Recruit only</div>'));
-            if (flags.lrr) element.append($('<span class="tag flag">Limited Rare Recruit only</div>'));
-            if (flags.promo) element.append($('<span class="tag flag">Promo-code only</div>'));
-            if (flags.special) element.append($('<span class="tag flag">One time only characters</div>'));
+                        (CharUtils.isFarmable(id) ? 'Farmeable' : 'No-farmeable') + '</div>'));
+            if (flags.rr) element.append($('<span class="tag flag">Sólo Rare Recruit</div>'));
+            if (flags.lrr) element.append($('<span class="tag flag">Limitado Sólo Rare Recruit</div>'));
+            if (flags.promo) element.append($('<span class="tag flag">Sólo por Código Promocional</div>'));
+            if (flags.special) element.append($('<span class="tag flag">Personajes Limitados</div>'));
             if (CharUtils.checkFarmable(id, { 'Story Island': true }))
-                element.append($('<span class="tag flag">Story mode only</div>'));
+                element.append($('<span class="tag flag">Sólo en Modo Historia</div>'));
             if (CharUtils.checkFarmable(id, { Fortnight: true }))
-                element.append($('<span class="tag flag">Fortnight only</div>'));
+                element.append($('<span class="tag flag">Sólo Quincenales</div>'));
             if (CharUtils.checkFarmable(id, { Raid: true }))
-                element.append($('<span class="tag flag">Raid only</div>'));
+                element.append($('<span class="tag flag">Sólo Raid</div>'));
             if (CharUtils.checkFarmable(id, { 'Story Island': true, Fortnight: true }))
-                element.append($('<span class="tag flag">Story mode & fortnight only</div>'));
+                element.append($('<span class="tag flag">Sólo en Modo Historia y Quincenales</div>'));
             if (CharUtils.checkFarmable(id, { Raid: true, Fortnight: true }))
-                element.append($('<span class="tag flag">Raid & fortnight only</div>'));
+                element.append($('<span class="tag flag">Sólo Raid y Quincenales</div>'));
             // matchers
             if (!data) return;
             matchers.forEach(function(matcher) {
@@ -330,7 +330,7 @@ directives.addTags = function($stateParams, $rootScope) {
                 // captain effects
                 if (matcher.target == 'captain' && matcher.matcher.test(data.captain)) {
                     name = matcher.name;
-                    if (!/captains$/.test(name)) name = name.replace(/ers$/,'ing').replace(/s$/,'') + ' captain';
+                    if (!/captains$/.test(name)) name = name.replace(/ers$/,'ing').replace(/s$/,'') + ' - Capitán';
                     else name = name.replace(/s$/,'');
                     name = name.replace(/iing/,'ying');
                     element.append($('<span class="tag captain">' + name + '</div>'));
@@ -338,7 +338,7 @@ directives.addTags = function($stateParams, $rootScope) {
                 // specials
                 if (matcher.target.indexOf('special') === 0 && matcher.matcher.test(data[matcher.target])) {
                     name = matcher.name;
-                    if (!/specials$/.test(name)) name = name.replace(/ers$/,'ing').replace(/s$/,'') + ' special';
+                    if (!/specials$/.test(name)) name = name.replace(/ers$/,'ing').replace(/s$/,'') + ' - Especial';
                     else name = name.replace(/s$/,'');
                     name = name.replace(/iing/,'ying');
                     element.append($('<span class="tag special">' + name + '</div>'));
