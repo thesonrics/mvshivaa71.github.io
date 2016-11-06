@@ -451,7 +451,7 @@ window.specials = {
 		type: "condition"
 	},
 	668: {
-		atk: function(p) { return !p.unit.class.has('Freedom') ? 1 : window.specials[668].multiplier; },
+		atk: function(p) { return !p.unit.class.has('Free Spirit') ? 1 : window.specials[668].multiplier; },
 		type: "class",
 		onActivation: function(p) {
 			var n = (window.specials[668].multiplier == 1.5 ? 1 : 0);
@@ -463,7 +463,7 @@ window.specials = {
 		}
 	},
 	669: {
-		atk: function(p) { return !p.unit.class.has('Freedom') ? 1 : window.specials[669].multiplier; },
+		atk: function(p) { return !p.unit.class.has('Free Spirit') ? 1 : window.specials[669].multiplier; },
 		type: "class",
 		onActivation: function(p) {
 			var n = (window.specials[669].multiplier == 1.5 ? 1 : 0);
@@ -493,11 +493,11 @@ window.specials = {
 		type: "type"
 	},
 	687: {
-		atk: function(p) { return p.unit.class.has("Freedom") ? 1.3 : 1; },
+		atk: function(p) { return p.unit.class.has("Free Spirit") ? 1.3 : 1; },
 		type: "class"
 	},
 	688: {
-		atk: function(p) { return p.unit.class.has("Freedom") ? 1.3 : 1; },
+		atk: function(p) { return p.unit.class.has("Free Spirit") ? 1.3 : 1; },
 		type: "class"
 	},
 	689: {
@@ -523,15 +523,15 @@ window.specials = {
 		type: "class"
 	},
 	715: {
-		atk: function(p) { return p.unit.class.has("Freedom") ? 1.5 : 1; },
+		atk: function(p) { return p.unit.class.has("Free Spirit") ? 1.5 : 1; },
 		type: "class"
 	},
 	716: {
-		atk: function(p) { return p.unit.class.has("Freedom") ? 1.5 : 1; },
+		atk: function(p) { return p.unit.class.has("Free Spirit") ? 1.5 : 1; },
 		type: "class"
 	},
 	719: {
-		atk: function(p) { return p.unit.class.has("Knowledge") ? window.specials[719].multiplier : 1; },
+		atk: function(p) { return p.unit.class.has("Cerebral") ? window.specials[719].multiplier : 1; },
 		type: "class",
 		onActivation: function(p) {
 			var n = (p.percHP <= 30 ? 2 : 1.5);
@@ -543,7 +543,7 @@ window.specials = {
 		}
 	},
 	720: {
-		atk: function(p) { return p.unit.class.has("Knowledge") ? window.specials[720].multiplier : 1; },
+		atk: function(p) { return p.unit.class.has("Cerebral") ? window.specials[720].multiplier : 1; },
 		type: "class",
 		onActivation: function(p) {
 			var n = (p.percHP <= 30 ? 2 : 1.5);
@@ -594,11 +594,11 @@ window.specials = {
 		orb: function(p) { return CrunchUtils.getOrbMultiplier(p.orb, 1, 1.75); }
 	},
 	755: {
-		atk: function(p) { return p.unit.class.has("Tough") ? 1.75 : 1; },
+		atk: function(p) { return p.unit.class.has("Powerhouse") ? 1.75 : 1; },
 		type: "class"
 	},
 	756: {
-		atk: function(p) { return p.unit.class.has("Tough") ? 1.75 : 1; },
+		atk: function(p) { return p.unit.class.has("Powerhouse") ? 1.75 : 1; },
 		type: "class"
 	},
 	761: {
@@ -615,7 +615,7 @@ window.specials = {
 		warning: "El especial seleccionado (%name%) asume que el enemigo ha sido retrasado."
 	},
 	771: {
-		atk: function(p) { return p.unit.class.has("Knowledge") ? 1.75 : 1; },
+		atk: function(p) { return p.unit.class.has("Cerebral") ? 1.75 : 1; },
 		type: "type"
 	},
 	780: {
@@ -721,11 +721,11 @@ window.specials = {
 		warning: "El especial seleccionado (%name%) asume que el enemigo ha sido envenenado."
 	},
 	832: {
-		atk: function(p) { return p.unit.class.has("Freedom") ? 1.5 : 1; },
+		atk: function(p) { return p.unit.class.has("Free Spirit") ? 1.5 : 1; },
 		type: "class"
 	},
 	833: {
-		atk: function(p) { return p.unit.class.has("Freedom") ? 1.5 : 1; },
+		atk: function(p) { return p.unit.class.has("Free Spirit") ? 1.5 : 1; },
 		type: "class"
 	},
 	835: {
@@ -735,11 +735,11 @@ window.specials = {
 		orb: function(p) { return CrunchUtils.getOrbMultiplier(p.orb, 1, 1.75); }
 	},
 	837: {
-		atk: function(p) { return p.unit.class.has("Ambition") ? 1.75 : 1; },
+		atk: function(p) { return p.unit.class.has("Driven") ? 1.75 : 1; },
 		type: "class"
 	},
 	838: {
-		atk: function(p) { return p.unit.class.has("Ambition") ? 1.75 : 1; },
+		atk: function(p) { return p.unit.class.has("Driven") ? 1.75 : 1; },
 		type: "class"
 	},
 	839: {
@@ -806,7 +806,7 @@ window.specials = {
 		def: function() { return 0.5; }
 	},
 	853: {
-		atk: function(p) { return p.unit.class("Tough") || p.unit.class.has("Fighter") ? 1.2 : 1; },
+		atk: function(p) { return p.unit.class("Powerhouse") || p.unit.class.has("Fighter") ? 1.2 : 1; },
 		type: "class"
 	},
 	857: {
@@ -836,7 +836,7 @@ window.specials = {
 	},
 	866: {
 		atk: function(p) {
-			return p.unit.class.has("Slasher") || p.unit.class.has("Knowledge") ? 1.3 : 1;
+			return p.unit.class.has("Slasher") || p.unit.class.has("Cerebral") ? 1.3 : 1;
 		},
 		type: "class"
 	},
@@ -880,18 +880,18 @@ window.specials = {
 	},
 	881: {
 		atk: function(p) {
-			return p.unit.class.has("Shooter") || p.unit.class.has("Freedom") ? 1.75 : 1;
+			return p.unit.class.has("Shooter") || p.unit.class.has("Free Spirit") ? 1.75 : 1;
 		},
 		type: "class"
 	},
 	882: {
 		atk: function(p) {
-			return p.unit.class.has("Shooter") || p.unit.class.has("Freedom") ? 1.75 : 1;
+			return p.unit.class.has("Shooter") || p.unit.class.has("Free Spirit") ? 1.75 : 1;
 		},
 		type: "class"
 	},
 	883: {
-		atk: function(p) { return !p.unit.class.has('Tough') ? 1 : window.specials[883].multiplier; },
+		atk: function(p) { return !p.unit.class.has('Powerhouse') ? 1 : window.specials[883].multiplier; },
 		type: "class",
 		onActivation: function(p) {
 			var n = (window.specials[883].multiplier == 1.5 ? 1 : 0);
@@ -903,7 +903,7 @@ window.specials = {
 		}
 	},
 	884: {
-		atk: function(p) { return !p.unit.class.has('Tough') ? 1 : window.specials[884].multiplier; },
+		atk: function(p) { return !p.unit.class.has('Powerhouse') ? 1 : window.specials[884].multiplier; },
 		type: "class",
 		onActivation: function(p) {
 			var n = (window.specials[884].multiplier == 1.5 ? 1 : 0);
@@ -926,11 +926,11 @@ window.specials = {
 		def: function(p) { return 0.2; }
 	},
 	891: {
-		atk: function(p) { return p.unit.class.has("Tough") ? 1.25 : 1; },
+		atk: function(p) { return p.unit.class.has("Powerhouse") ? 1.25 : 1; },
 		type: "class"
 	},
 	902: {
-		atk: function(p) { return !p.unit.class.has('Tough') ? 1 : window.specials[902].multiplier; },
+		atk: function(p) { return !p.unit.class.has('Powerhouse') ? 1 : window.specials[902].multiplier; },
 		type: "class",
 		onActivation: function(p) {
 			var n = (window.specials[902].multiplier == 1.5 ? 1 : 0);
@@ -942,7 +942,7 @@ window.specials = {
 		}
 	},
 	903: {
-		atk: function(p) { return !p.unit.class.has('Tough') ? 1 : window.specials[903].multiplier; },
+		atk: function(p) { return !p.unit.class.has('Powerhouse') ? 1 : window.specials[903].multiplier; },
 		type: "class",
 		onActivation: function(p) {
 			var n = (window.specials[903].multiplier == 1.5 ? 1 : 0);
@@ -995,8 +995,8 @@ window.specials = {
 	},
 	911: {
 		atk: function(p) {
-			if (!window.specials[911].stage) return p.unit.class.has("Tough") ? 1.2 : 1;
-			if (window.specials[911].stage == 1) return p.unit.class.has("Tough") ? 2 : 1;
+			if (!window.specials[911].stage) return p.unit.class.has("Powerhouse") ? 1.2 : 1;
+			if (window.specials[911].stage == 1) return p.unit.class.has("Powerhouse") ? 2 : 1;
 		},
 		type: "class",
 		stage: -1,
@@ -1010,8 +1010,8 @@ window.specials = {
 	},
 	912: {
 		atk: function(p) {
-			if (!window.specials[912].stage) return p.unit.class.has("Tough") ? 1.2 : 1;
-			if (window.specials[912].stage == 1) return p.unit.class.has("Tough") ? 2 : 1;
+			if (!window.specials[912].stage) return p.unit.class.has("Powerhouse") ? 1.2 : 1;
+			if (window.specials[912].stage == 1) return p.unit.class.has("Powerhouse") ? 2 : 1;
 		},
 		type: "class",
 		stage: -1,
@@ -1024,13 +1024,13 @@ window.specials = {
 		}
 	},
 	915: {
-		atk: function(p) { return p.unit.class.has("Knowledge") ? 1.5 : 1; },
-		rcv: function(p) { return p.unit.class.has("Knowledge") ? 1.5 : 1; },
+		atk: function(p) { return p.unit.class.has("Cerebral") ? 1.5 : 1; },
+		rcv: function(p) { return p.unit.class.has("Cerebral") ? 1.5 : 1; },
 		type: "class"
 	},
 	916: {
-		atk: function(p) { return p.unit.class.has("Knowledge") ? 1.5 : 1; },
-		rcv: function(p) { return p.unit.class.has("Knowledge") ? 1.5 : 1; },
+		atk: function(p) { return p.unit.class.has("Cerebral") ? 1.5 : 1; },
+		rcv: function(p) { return p.unit.class.has("Cerebral") ? 1.5 : 1; },
 		type: "class"
 	}
 };
