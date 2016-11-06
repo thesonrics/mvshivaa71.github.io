@@ -387,7 +387,7 @@ directives.costSlider = function($timeout) {
                 max: scope.filters.cost[1],
                 from: scope.filters.cost[0],
                 to: scope.filters.cost[1],
-                postfix: ' cost',
+                postfix: ' coste',
                 onFinish: function(data) {
                     scope.filters.cost[0] = data.from;
                     scope.filters.cost[1] = data.to;
