@@ -306,7 +306,7 @@ directives.addTags = function($stateParams, $rootScope) {
             var id = $stateParams.id, data = details[id];
             // flags
             var flags = window.flags[id] || { };
-            element.append($('<span class="tag flag">' + (flags.global ? 'Global unit' : 'Japan unit') + '</div>'));
+            element.append($('<span class="tag flag">' + (flags.global ? 'Unidad Global' : 'unidad Japonesa') + '</div>'));
             element.append($('<span class="tag flag">' +
                         (CharUtils.isFarmable(id) ? 'Farmable' : 'Non-farmable') + '</div>'));
             if (flags.rr) element.append($('<span class="tag flag">Rare Recruit only</div>'));
@@ -364,11 +364,11 @@ directives.addLinks = function($stateParams) {
             }
             if (!incomplete) {
                 ul.append($('<li><a href="http://onepiece-treasurecruise.com/c-' + id + '" target="_blank">' +
-                        'Official Guide (Japanese)</a></li>'));
+                        'Guía Oficial (Japonesa)</a></li>'));
             }
             if (!isNaN(gw[id-1])) {
                 ul.append($('<li><a href="http://xn--pck6bvfc.gamewith.jp/article/show/' + gw[id-1] + '" target="_blank">' +
-                        'GameWith Page (Japanese)</a></li>'));
+                        'Página GameWith (Japonesa)</a></li>'));
             }
             if (ul.children().length > 0)
                 element.append(ul);
