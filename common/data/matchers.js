@@ -134,13 +134,13 @@ window.matchers = [
     {
         name: 'Potenciadores de tipo',
         target: 'special',
-        matcher: /Aumenta.+ (ATK|HP|RCV|ATK y HP|ATK y RCV|HP y RCV|ATK, HP y RCV) de[^,].+(STR|DEX|QCK|PSY|INT)\b/i
+        matcher: /Aumenta.+ (el ATK|la HP|el RCV|el ATK y la HP|el ATK y el RCV|la HP y el RCV|el ATK, la HP y el RCV) de[^,].+(STR|DEX|QCK|PSY|INT)\b/i
     },
 
     {
         name: 'Potenciadores de clase',
         target: 'special',
-        matcher: /Aumenta.+ (ATK|HP|RCV|ATK y HP|ATK y RCV|HP y RCV|ATK, HP y RCV) de[^,]+(Slasher|Striker|Fighter|Shooter|Free Spirit|Cerebral|Powerhouse|Driven)/i
+        matcher: /Aumenta.+ (el ATK|la HP|el RCV|el ATK y la HP|el ATK y el RCV|la HP y el RCV|el ATK, la HP y el RCV) de[^,]+(Slasher|Striker|Fighter|Shooter|Free Spirit|Cerebral|Powerhouse|Driven)/i
     },
 
     {
@@ -171,6 +171,12 @@ window.matchers = [
         name: 'Potenciadores de ATK condicionales (2)',
         target: 'special',
         matcher: /(si en ese turno.+Aumenta.+ATK|Una vez lanzado el especial.+Aumenta.+ATK)/i
+    },
+	
+	{
+        name: 'Potenciadores Afinidad de Tipo',
+        target: 'special',
+        matcher: /Aumenta la Afinidad de Tipo/i
     },
 
     {
@@ -221,6 +227,13 @@ window.matchers = [
         target: 'special',
         matcher: /intercambia.+orbes/i
     },
+	
+	{
+        name: 'Sincronizadores de orbes',
+        target: 'special',
+        matcher: /Cambia.+(los orbes|su propio orbe).+a.+(favorable|favorables)/i,
+        include: [ 1036, 1037 ]
+    },
 
     {
         name: 'Vaciadores de orbes',
@@ -261,7 +274,8 @@ window.matchers = [
     {
         name: 'Reductores de HP en %',
         target: 'special',
-        matcher: /Reduce.+HP actual.+(enemigo|enemigos)/i
+        matcher: /Reduce la HP actual de los enemigos/i,
+		include: [ 1226 ]
     },
 
     {
@@ -301,15 +315,21 @@ window.matchers = [
     },
 
     {
-        name: 'Reductores de encadenamientos',
+        name: 'Reductores de Encadenamientos',
         target: 'special',
-        matcher: /Reduce.+encadenamientos/i,
+        matcher: /Reduce.+duración.+encadenamientos/i,
     },
 
     {
-        name: 'Reductores de silencio',
+        name: 'Reductores de Despair',
         target: 'special',
-        matcher: /Reduce.+duración.+silencios/i,
+        matcher: /Reduce.+duración.+despair/i,
+    },
+	
+	{
+        name: 'Reductores de Silencio',
+        target: 'special',
+        matcher: /Reduce.+duración.+silencio/i,
     },
 
     {
@@ -319,7 +339,7 @@ window.matchers = [
     },
 
     {
-        name: 'Eliminadores de ceguera',
+        name: 'Eliminadores de Ceguera',
         target: 'special',
         matcher: /elimina.+ ceguera/i
     },
@@ -343,7 +363,7 @@ window.matchers = [
     },
 
     {
-        name: 'Desintoxicadores',
+        name: 'Eliminadores de veneno',
         target: 'special',
         matcher: /Elimina.+ envenenamiento/i,
         include: [ 1078, 1079 ]
@@ -362,12 +382,35 @@ window.matchers = [
     },
     
     {
-       name: 'Reductores de aturdimiento',
+       name: 'Reductores de Parálisis',
        target: 'special',
-       matcher: /reduce.+duración.+aturdimiento/i
-    }
+       matcher: /reduce.+duración.+parálisis/i
+    },
+	
+	/* * * * * Sailor * * * * */
     
+    {
+        name: 'Tiene Habilidad Sailor',
+        target: 'sailor',
+        matcher: /\S/i
+    },
     
+    {
+        name: 'Sailors potenciadoras de tipo',
+        target: 'sailor',
+        matcher: /Aumenta (el ATK|la HP|el RCV|el ATK y la HP|el ATK y el RCV|la HP y el RCV|el ATK, la HP y el RCV) de[^,]+(STR|DEX|QCK|PSY|INT)\b/i
+    },
     
+    {
+        name: 'Sailors potenciadoras de clase',
+        target: 'sailor',
+        matcher: /Aumenta (el ATK|la HP|el RCV|el ATK y la HP|el ATK y el RCV|la HP y el RCV|el ATK, la HP y el RCV) de[^,]+(Slasher|Striker|Fighter|Shooter|Free Spirit|Cerebral|Powerhouse|Driven)/i
+    },
+    
+    {
+        name: 'Sailors de orbes favorables',
+        target: 'sailor',
+        matcher: /Hace que los orbes (\[STR\]|\[DEX\]|\[QCK\]|\[PSY\]|\[INT\]|\[RCV\]|\[TND\]) cuenten como favorables/i
+    },
 
 ];
