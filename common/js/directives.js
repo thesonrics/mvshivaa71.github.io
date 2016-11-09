@@ -20,15 +20,17 @@ var notes = {
     zombie: "La protección solo funciona si se es atacado por un solo enemigo y dejará al equipo con al menos 1 de HP; " +
         "el efecto no se aplicará cuando se sea atacado por varios enemigos a la vez.",
     dmgvacio: "El multiplicador exacto utilizado depende del número de orbes #1 utilizados: " +
-        "0 orbes - #1x ATK, 1 orbe - #2x ATK, 2 orbes - #3x ATK, 3 orbes - #4x ATK, 4 orbes - #5x ATK, 5 orbes - #6x ATK, 6 orbes - #7x ATK.",
+        "0 orbes - #2x ATK, 1 orbe - #3x ATK, 2 orbes - #4x ATK, 3 orbes - #5x ATK, 4 orbes - #6x ATK, 5 orbes - #7x ATK, 6 orbes - #8x ATK.",
     perfectDificil: "Reduce el tiempo para hacer un Perfect (La animación del personaje se mantiene igual). ", 
     perfectFacil: "Aumenta el tiempo para hacer un Perfect (La animación del personaje se mantiene igual). ",
-    aturdimiento: "Aturdimiento se refiere a los efectos que evitan que puedas activar un especial cargado. ",
-    paralisis: "La parálisis provoca que un personaje tenga la probabilidad de no atacar y romper la cadena. ",
+    silencio: "Silencio se refiere a los efectos que retrasan la carga de los especiales. ",
+    paralisis: "La Parálisis provoca que un personaje tenga la probabilidad de no atacar y romper la cadena. ",
     reducirCargas: "Reducir la carga de los especiales funciona como si se tuviera un turno más para cargar el especial. ",
     boostProportional: "Por debajo del #1% -> #2x, entre el #1% y el #3% -> #4x y por encima del #3% -> #5x. ",
-    boostAcumulado: "Los boosts son acumulativos. Los personajes #1 y #2 recibirán ambos boosts.",
-    boostNoAcumulado: "Estos boosts no se acumulan para personajes que tengan ambas clases"
+    boostAcumulado: "Los aumentos son acumulativos. Los personajes #1 y #2 recibirán ambos aumentos. ",
+    boostNoAcumulado: "Estos aumentos no se acumulan para personajes que tengan ambas clases. ",
+	afinidad:"La Afinidad de Tipo aumenta o disminuye el daño entre tipos. Por ejemplo, una unidad [STR] normalmente hace 2x a una unidad [DEX] y a una unidad [QCK] 0.5x. En este caso, con Afinidad de Tipo harán #1x a [DEX] y #2x a [QCK]. ",
+	nocuracion: "Este debuff impide completamente las capacidades de curación (orbes [RCV], especiales, etc.). Este debuff está presente en Akainu Raid Boss."
 };
 
 /***********
@@ -84,7 +86,7 @@ filters.decorate = function() {
             .replace(/\[?(STR|DEX|QCK|PSY|INT)\]?/g,'<span class="badge $1">$1</span>')
             .replace(/\[RCV\]/g,'<span class="badge RCV">RCV</span>')
             .replace(/\[TND\]/g,'<span class="badge TND"><i class="tnd-icon"></i> TND</span>')
-            .replace(/\[VACIO\]/g,'<span class="badge EMPTY"><i class="fa fa-circle-o"></i> VACÍO</span>')
+            .replace(/\[VACIO\]/g,'<span class="badge EMPTY"><i class="fa fa-circle-o"></i> VACIO</span>')
             .replace(/\[NEGATIVO\]/g,'<span class="badge BLOCK"><i class="block-icon"></i> NEGATIVO</span>')
             .replace(/\[BOMBA\]/g,'<span class="badge BOMB"><i class="fa fa-bomb"></i> BOMBA</span>')
             .replace(/\[G\]/g,'<span class="badge G">G</span>');
